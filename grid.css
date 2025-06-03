@@ -1,0 +1,266 @@
+body {
+  font-family: 'Inter', sans-serif;
+  /*Ensure body takes full height and centers content */
+  min-height: 100vh;
+  /*display: flex;*/
+  justify-content: center;
+  background-color: moccasin/* Light gray background */
+}
+/* Custom CSS for the container grid */
+.container {
+  /* Responsive grid: auto-fit as many columns as possible, each at least 300px wide */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px; /* Equivalent to Tailwind's gap-6 */
+  max-width: 1280px; /* Max width for the entire layout */
+  margin: 0 auto; /* Center the container */
+  padding: 16px; /* Equivalent to Tailwind's p-4 */
+  width: 100%; /* Ensure it takes full width up to max-width */
+}
+/* Styles for card1 and card2 (internal grids) */
+.card1, .card2 {
+  display: grid;
+  gap: 8px; /* Equivalent to Tailwind's gap-2 for internal pixel spacing */
+  background-color: #04820483; /* White background */
+  border-radius: 12px; /* Equivalent to Tailwind's rounded-xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+  padding: 16px; /* Internal padding */
+  height: 400px; /* Fixed height for consistent card size */
+  width: 100%; /* Ensure cards fill their grid column */
+}
+
+.card1 {
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for card1 */
+  grid-template-rows: repeat(2, 1fr); /* 3 rows for card1 (6 pixels total) */
+}
+
+.card2 {
+  grid-template-columns: repeat(3, 5fr); /* 3 columns for card2 */
+  grid-template-rows: repeat(3, 5fr); /* 3 rows for card2 (7 pixels, one spans) */
+}
+
+/* Styles for individual pixel elements */
+.pixels {
+  position: relative; /* Needed if you plan to absolutely position content inside */
+  background-color: #e5e7eb; /* Light gray for pixels */
+  border: 1px solid #d1d5db; /* Light border */
+  border-radius: 8px; /* Rounded corners for pixels */
+  overflow: hidden; /* Crucial to contain images/buttons */
+  flex-direction: column;
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+/* Specific styling for the spanning pixel in card2 */
+.pexa {
+  /* Span all 3 columns in the last row of card2 */
+  grid-column: 1 / span 3; /* Start at column 1, span 3 columns */
+  grid-row: 3 / span 1; /* Start at row 3, span 1 row */
+}
+p{
+  margin-top: 8px; /* Reset default paragraph margin */
+  padding: 0; /* Reset default paragraph padding */
+  text-align: center; /* Center text in pixels */
+  font-size: 14px; /* Font size for pixel text */
+  color:black; /* Dark gray text color */
+  font-weight: 500; /* Medium weight for readability */
+}
+/* Styling for images within pixels */
+.pixels img {
+  width: 100%;
+  max-height: 70%;
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  border-radius: 8px; /* Match pixel border-radius */
+}
+/* Styling for buttons within pixels */
+.pixels button{
+  background-color: #6d97ec;
+  width: 90%; /* Full width of the pixel */
+  padding: 10px 16px; /* Tailwind's px-4 py-2 equivalent */
+  border-radius: 8px; /* Rounded buttons */
+  font-weight: 600; /* Semi-bold text */
+  color: #ffffff; /* White text */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  cursor: pointer;
+  border: none; /* Remove default button border */
+  margin-top: 6px;
+}
+.card2 p{
+  margin-top: 0px;
+}
+.card2{
+position:relative;
+}
+.card2 button{
+  padding: 2px 2px;
+  position: absolute;
+  bottom: 0px;
+   justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+   width: 90px;
+   border-radius: 5px;
+}
+nav{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  background-color: rgb(230, 230, 234);
+  border-radius: 10px;
+}
+.logo-cointainer{
+  width: auto;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.logo-cointainer img{
+  width: 100px;
+  height: 100px;
+   border-radius: 50%;
+}
+.nav-buttons{
+  width: 70%;
+}
+.ul-btn{
+  display: flex;
+  justify-content:space-around;
+   align-items: center;
+   padding: 35px;
+}
+ul li{
+list-style: none;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+color: coral;
+border-bottom: 3px solid rgb(174, 174, 43);
+}
+.search-bar{
+  display: flex;
+}
+.search-image{
+  margin-left: 10px;  
+}
+.image{
+   width:30px; 
+  height:30px;
+  margin-top: 50px;
+  border-radius: 35%;
+  cursor: pointer;
+}
+.auth-buttons{
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+.auth-buttons ul{
+   display: flex;
+}
+.auth-buttons ul li{
+   padding: 20px;
+   margin-top: 20px;
+}
+.auth-buttons ul li:hover{
+background-color: bisque;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+
+}
+#search{
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 85px;
+  height: 25px;
+}
+.footer-notes {
+    background-color: black;
+    width: 100%;
+    color: #e5e7eb;
+    border-radius: 6px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer1 {
+    color: #e5e7eb;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-div {
+    display: flex;
+    align-items: center;
+}
+
+.ul1 {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ul1 li {
+    margin-left: 20px;
+    white-space: nowrap;
+}  
+
+.ul1 li:hover {
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .footer-items {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer1 {
+        margin-bottom: 10px;
+    }
+
+    .ul1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ul1 li {
+        margin: 5px 10px;
+    }
+  .ul-btn{
+    flex-direction: column;
+  }
+ul li{
+  color: salmon;
+  flex-direction: column;
+}
+.auth-buttons{
+  width:10%;
+}
+#search{
+  margin-top: 0px;
+}
+.search-image{
+  margin-top: -46px;
+}
+}
