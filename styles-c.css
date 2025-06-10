@@ -1,0 +1,230 @@
+*{
+  margin: auto;
+  padding: 0px;
+}
+:root{
+  --bg-color: teal;
+  --bg-variant: purple;
+  --secondary-color: rgba(255, 166, 0, 0.385);
+  --sec-variant: rgba(128, 0, 0, 0.802);
+  --tertiary: rgba(255, 192, 203, 0.564);
+  --warning: yellow;
+  --success-color: green;
+  --danger: red;
+}
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Using the Inter font */
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light grey background for the page */
+    display: flex;
+    justify-content: center; /* Center the whole booking container horizontally */
+    align-items: flex-start; /* Align content to the top vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Main Booking Container - now arranges booking-card-one and two side-by-side */
+.booking-container {
+    display: flex; /* Changed to flex for side-by-side arrangement */
+    flex-direction: column; /* Arrange children in a column */
+    flex-wrap: wrap; /* Allow wrapping to column on smaller screens */
+    gap: 40px; /* Space between the two main card sections */
+    max-width: 1200px; /* Maximum width for the entire container */
+    width: 100%; /* Take full width up to max-width */
+    justify-content: center; /* Center the two sections if they don't fill 100% width */
+    align-items: flex-start; /* Align sections to the top */
+}
+
+/* Styles for the main booking card sections */
+.booking-card-one,
+.booking-card-two {
+    display: grid; /* Enables CSS Grid for the internal layout of cards */
+    /* Responsive grid: auto-fit columns, each card minimum 280px, maximum 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between individual booking cards within the grid */
+    padding: 20px;
+    background-color: #ffffff; /* White background for the card section itself */
+    border-radius: 12px; /* Rounded corners for the entire section */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex: 1; /* Allow each section to grow and shrink, taking equal space */
+    min-width: 300px; /* Ensure sections don't get too small before wrapping */
+}
+
+/* Styles for individual booking cards (the .booking-item elements) */
+.booking-item { /* Changed from .div to .booking-item */
+    background-color: #f9f9f9; /* Lighter background for each individual card */
+    padding: 25px;
+    border-radius: 10px; /* Rounded corners for individual cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
+    display: flex; /* Use flexbox to arrange content vertically within each card */
+    flex-direction: column;
+    align-items: flex-end; /* ALIGN ITEMS TO THE RIGHT */
+    text-align: right; /* ALIGN TEXT TO THE RIGHT */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
+    
+}
+
+.booking-item:hover { /* Changed from .div to .booking-item */
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+/* Image styles within individual cards */
+img { /* Changed from .div img to .booking-item img */
+    max-width: 50px; /* Ensure images fit within their containers */
+    height: 50px; /* Fixed height for consistent card size */
+    object-fit: cover; /* Cover the image area, maintaining aspect ratio */
+    border-radius: 50%; /* Rounded corners for images */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Heading styles for card titles */
+.booking-item h3 { /* Changed from .div h3 to .booking-item h3 */
+    color: #333; /* Dark grey text color */
+    font-size: 1.6em; /* Larger font size */
+    margin-bottom: 10px; /* Space below the heading */
+    font-weight: 600; /* Semi-bold font weight */
+}
+
+/* Paragraph styles for card descriptions */
+.booking-item p { /* Changed from .div p to .booking-item p */
+    color: #666; /* Medium grey text color */
+    font-size: 0.95em; /* Slightly smaller font size */
+    line-height: 1.6; /* Improved readability for text */
+    margin-top: 15px; /* Space above the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+    flex-grow: 1; /* Allows paragraph to take available vertical space, pushing button to bottom */
+}
+
+/* Styles for trip option container */
+.booking-item .trip-options {
+    display: flex; /* Use flexbox for internal layout of trip options */
+    flex-direction: column; /* Stack labels vertically */
+    align-items: flex-end; /* Align the labels to the right */
+    width: 100%; /* Take full width of parent to ensure alignment works */
+    margin-bottom: 10px;
+}
+
+/* Styles for trip option labels */
+.booking-item label { /* Changed from .div label to .booking-item label */
+    color: #555; /* Slightly darker grey for labels */
+    font-weight: 500; /* Medium font weight */
+    font-size: 0.9em; /* Smaller font size */
+    display: flex; /* Make label a flex container to align text and radio button */
+    align-items: center; /* Vertically align items in the label */
+    justify-content: flex-end; /* Push content to the right */
+    gap: 8px; /* Space between label text/span and radio button */
+    margin-bottom: 5px; /* Small space between radio button labels */
+}
+
+/* Styles for price spans */
+.booking-item span { /* Changed from .div span to .booking-item span */
+    color: #007bff; /* Primary blue color for prices */
+    font-weight: bold; /* Bold font for prices */
+    font-size: 1.1em; /* Slightly larger font size for prices */
+}
+
+/* Styles for radio buttons */
+.booking-item input[type="radio"] { /* Changed from .div input[type="radio"] to .booking-item input[type="radio"] */
+    accent-color: #007bff; /* Custom highlight color for radio buttons */
+    cursor: pointer; /* Indicates it's interactive */
+    margin-left: 0; /* Remove default margin-left */
+}
+
+
+/* Styles for the "Book Now" buttons */
+.btn-0 {
+    background-color: #007bff; /* Primary blue button color */
+    color: white; /* White text color */
+    padding: 12px 25px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Standard font size */
+    font-weight: 600; /* Semi-bold font weight */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline for anchor tags styled as buttons */
+    display: inline-block; /* Allows padding and margin to be applied correctly */
+    margin-top: 15px; /* Space above the button */
+    align-self: flex-end; /* Align the button to the right within the flex container */
+}
+
+.btn-0:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-0:active {
+    transform: translateY(0); /* "Press" effect when clicked */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) { /* Adjust breakpoint for two-column sections */
+    .booking-container {
+        flex-direction: column; /* Stack sections vertically on medium screens */
+        align-items: center; /* Center the stacked sections */
+    }
+    .booking-card-one,
+    .booking-card-two {
+        width: 100%; /* Take full width when stacked */
+        max-width: 700px; /* Limit max width for stacked sections */
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-card-one,
+    .booking-card-two {
+        grid-template-columns: 1fr; /* Stack individual cards in a single column on tablets and smaller */
+        padding: 15px;
+        gap: 25px;
+    }
+
+    .booking-item {
+        padding: 20px;
+    }
+
+    .booking-item h3 {
+        font-size: 1.4em; /* Adjust heading size */
+    }
+
+    .booking-item p {
+        font-size: 0.9em; /* Adjust paragraph size */
+    }
+
+    .booking-item img {
+        height: 180px; /* Adjust image height */
+    }
+}
+
+/* Responsive adjustments for very small screens (mobile) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce overall body padding */
+    }
+
+    .booking-card-one,
+    .booking-card-two {
+        padding: 10px; /* Reduce section padding */
+        gap: 20px; /* Reduce gap between cards */
+    }
+
+    .booking-item {
+        padding: 15px; /* Reduce individual card padding */
+    }
+
+    .booking-item h3 {
+        font-size: 1.3em; /* Further adjust heading size */
+    }
+
+    .booking-item span, .booking-item label {
+        font-size: 0.85em; /* Adjust price and label size */
+    }
+
+    .btn-0 {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 0.9em; /* Adjust button font size */
+    }
+}
+
