@@ -3,6 +3,14 @@
   margin: 0;
   padding: 0;
 }
+:root{
+  --bg-color:teal;
+  --bg-variant: #f3e3f3;
+  --primary-color: #efffff;
+  --secondary-color: #fefefe;
+  --secondary-variant: #782097;
+  --supplementary: purple;
+}
 body{
   background: #6ecece;
   min-height: 100vh;
@@ -118,4 +126,7 @@ button:hover{
 .product-card:hover .description{
   color: darkred;
   transition: color 0.3s ease-in-out;
+}
+.booking-container{
+background: var(--secondary-color);
 }
